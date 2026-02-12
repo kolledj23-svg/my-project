@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" id="grades" placeholder="Введите оценки через запятую">
-    <button onclick="calculateAverage()">Рассчитать среднее</button>
+    <input type="text" id="temp" placeholder="Введите число">
+    <select id="mode">
+        <option value="CtoF">C > F</option>
+        <option value="FtoC">F > C</option>
+    </select>
+    <button onclick="convertTemp()">Конвертировать температуру</button>
     <p id="result"></p>
  <script src="script.js"></script>
 </body>

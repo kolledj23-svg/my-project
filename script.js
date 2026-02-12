@@ -1,7 +1,22 @@
-function calculateAverage() {
-    let input = document.getElementById('grades').value;
-    let grades = input.split(',').map(Number);
-    let sum = grades.reduce((acc, grade) => acc + grade, 0);
-    let average = sum / grades.length;
-    document.getElementById('result').textContent = `Средняя оценка: ${average.toFixed(2)}`;
+function convertTemp() {
+    const tempInput = document.getElementById("temp").value;
+    const mode = document.getElementById("mode").value;
+    const result = document.getElementById("result");
+
+    const temp = Number(tempInput);
+
+    if (tempInput === "" || isNaN(temp)) {
+        result.textContent = "Ошибка: введите число";
+        return;
+    }
+
+    let converted;
+
+    if (mode === "CtoF") {
+        converted = (temp * 9/5 + 32).toFixed(2);
+        result.textContent = `${temp} °C = ${converted} °F`;
+    } else {
+        converted = ((temp - 32) * 5/9).toFixed(2);
+        result.textContent = `${temp} °F = ${converted} °C`;
+    }
 }
